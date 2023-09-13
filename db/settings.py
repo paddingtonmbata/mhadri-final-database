@@ -69,7 +69,8 @@ API_KEY = '2c5aa8423852a993f670fe8e05570c627c3980654ce03e38378bbbd937030322'
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
-    "https://master--delicate-treacle-bd18a4.netlify.app"
+    "https://master--delicate-treacle-bd18a4.netlify.app",
+    "https://6502064077bf8134d344c77e--wondrous-taffy-2754e1.netlify.app"
 ]
 
 CORS_ALLOW_HEADERS = [
