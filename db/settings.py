@@ -63,9 +63,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
 
 API_KEY = '2c5aa8423852a993f670fe8e05570c627c3980654ce03e38378bbbd937030322'
 
