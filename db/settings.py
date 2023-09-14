@@ -63,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.staticfilels',
+    'whitenoise.middleware.WhiteNoiseMIddleware',
 ]
 
 API_KEY = '2c5aa8423852a993f670fe8e05570c627c3980654ce03e38378bbbd937030322'
@@ -157,3 +159,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = True
