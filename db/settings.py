@@ -39,7 +39,8 @@ ALLOWED_HOSTS = [
     "mhadri-test-site-bdfa87d23e0b.herokuapp.com",
     "127.0.0.1",
     "127.0.0.1:3000",
-    "localhost"
+    "localhost",
+    "mhadri-final-database-af023718fb18.herokuapp.com",
 ]
 
 
