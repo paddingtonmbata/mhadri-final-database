@@ -266,16 +266,16 @@ class Command(BaseCommand):
                 institution_location=country,
                 type_of_course=row['Type of course'],
                 thematic_focus=row['Thematic focus'],
-                target_population=row['Target population( group that the studies focuses on, ie Migrants)'],
+                target_population=row['Target population'],
                 scope=row['Scope'],
                 objective_of_training=row['Objectives of training'],
-                target_audience=row['Target audience'],
-                traings_faculty=row['Trainings/Faculty (including qualifications)'],
+                trainings_faculty=row['Trainings/Faculty (including qualifications)'],
                 teaching_mechanism=row['Teaching Mechanism(online or face to face)'],
                 teaching_approach=row['Teaching approach'],
                 frequency_of_training=row['Frequency of Training'],
                 funding_schemes=row['Funding Schemes'],
                 sustainibility_factors=row['Sustainabiity Factors'],
+                numbers_since_2015=row['Numbers Trained Since 2015'],
                 key_challenges=row['Key Challenges']
             )
 

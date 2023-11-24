@@ -15,6 +15,7 @@ class TeachingMechanisms(models.TextChoices):
     BOTH = 'Both', 'Both'
 
 class CourseData(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     source = models.URLField(max_length=200)
     institution_name = models.CharField(max_length=100)
     institution_location = models.ForeignKey(Country, on_delete=models.CASCADE)
@@ -23,15 +24,14 @@ class CourseData(models.Model):
     target_population = models.CharField(max_length=100)
     scope = models.TextField()
     objective_of_training = models.CharField(max_length=100)
-    target_audience = models.CharField(max_length=100)
-    traings_faculty = models.TextField()
+    trainings_faculty = models.TextField()
     teaching_mechanism = models.CharField(choices=TeachingMechanisms.choices, default=TeachingMechanisms.ONLINE, max_length=20)
     teaching_approach = models.CharField(max_length=100)
     frequency_of_training = models.CharField(max_length=100)
     funding_schemes = models.TextField()
     sustainibility_factors = models.TextField()
+    numbers_since_2015 = models.CharField(max_length=100)
     key_challenges = models.TextField()
 
     def __str__(self):
-        return f"Course information for {self.institution_name}, {self.institution_location} focusing on {self.thematic_focus}"
-
+        return f"[{self.created_at}] {self.institution_name}, {self.institution_location} focusing on {self.thematic_focus}"
