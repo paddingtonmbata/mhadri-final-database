@@ -33,7 +33,7 @@ if os.environ.get('DATABASE_URL'):
 SECRET_KEY = 'django-insecure-!^pyz!x2_l2+^08*&$*15z0-c30c6jt8_1_$q3423f_n%xm!=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "mhadri-test-site-bdfa87d23e0b.herokuapp.com",
