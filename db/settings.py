@@ -79,6 +79,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://master--delicate-treacle-bd18a4.netlify.app",
     "https://6502064077bf8134d344c77e--wondrous-taffy-2754e1.netlify.app",
     "https://main--stupendous-puffpuff-cddf78.netlify.app"
+    "https://main--comforting-fudge-eb4168.netlify.app"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
