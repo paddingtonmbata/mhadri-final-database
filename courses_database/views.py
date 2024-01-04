@@ -89,10 +89,10 @@ class CourseDataSearch(generics.ListAPIView):
                 Q(type_of_course__icontains=search_term) |
                 Q(teaching_mechanism__icontains=search_term) |
                 Q(thematic_focus__icontains=search_term) |
-                Q(target_population__icontains=search_term) |
+                Q(population_focus__icontains=search_term) |
                 Q(scope__icontains=search_term) |
                 Q(objective_of_training__icontains=search_term) |
-                Q(teaching_approach__icontains=search_term) |
+                Q(methods_of_teaching__icontains=search_term) |
                 Q(institution_location__country_name__icontains=search_term)
             )
 
@@ -133,8 +133,7 @@ def courses_by_category(request, category):
     courses = CourseData.objects.all().filter( 
         Q(type_of_course__icontains=category) |
         Q(teaching_mechanism__icontains=category) |
-        Q(thematic_focus__icontains=category)  |
-        Q(target_audience__icontains=category)
+        Q(thematic_focus__icontains=category)  
     )
     serializer = CourseDataSerializer(courses, many=True)
     return Response({"data": serializer.data})
@@ -181,24 +180,6 @@ def institution_counts_by_code(request, country_code):
     response_data = {
         'labels': [item['institution_name'] for item in institution_counts],
         'data': [item['count'] for item in institution_counts]
-    }
-    return Response(response_data)
-
-@api_view(['GET'])
-def target_audience_counts(request):
-    target_audience_counts = CourseData.objects.values('target_audience').annotate(count=Count('id'))
-    response_data = {
-        'labels': [item['target_audience'] for item in target_audience_counts],
-        'data': [item['count'] for item in target_audience_counts]
-    }
-    return Response(response_data)
-
-@api_view(['GET'])
-def target_audience_counts_by_code(request, country_code):
-    target_audience_counts = CourseData.objects.filter(institution_location__country_code=country_code).values('target_audience').annotate(count=Count('id'))
-    response_data = {
-        'labels': [item['target_audience'] for item in target_audience_counts],
-        'data': [item['count'] for item in target_audience_counts]
     }
     return Response(response_data)
 

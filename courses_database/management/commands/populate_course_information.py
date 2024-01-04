@@ -259,24 +259,21 @@ class Command(BaseCommand):
                 country, created = Country.objects.get_or_create(country_name=institution_location_name, country_code=country_code)
             else:
                 country, created = Country.objects.get_or_create(country_name=institution_location_name)
-
+#Type of course	Institution	Institution Location	Thematic focus	Population Focus	Scope	Objectives of training	Course medium (ie in person or online course)	Methods of teaching	Frequency of running of course/training	Funding/Grants availabliliy	Source	Additional course details
             CourseData.objects.create(
                 source=row['Source'],
                 institution_name=row['Institution'],
                 institution_location=country,
                 type_of_course=row['Type of course'],
                 thematic_focus=row['Thematic focus'],
-                target_population=row['Target population'],
+                population_focus=row['Population Focus'],
                 scope=row['Scope'],
                 objective_of_training=row['Objectives of training'],
-                trainings_faculty=row['Trainings/Faculty (including qualifications)'],
-                teaching_mechanism=row['Teaching Mechanism(online or face to face)'],
-                teaching_approach=row['Teaching approach'],
-                frequency_of_training=row['Frequency of Training'],
-                funding_schemes=row['Funding Schemes'],
-                sustainibility_factors=row['Sustainabiity Factors'],
-                numbers_since_2015=row['Numbers Trained Since 2015'],
-                key_challenges=row['Key Challenges']
+                teaching_mechanism=row['Course medium (ie in person or online course)'],
+                methods_of_teaching=row['Methods of teaching'],
+                frequency_of_running_of_course=row['Frequency of running of course/training'],
+                funding_availability=row['Funding/Grants availabliliy'],
+                additional_details=row['Additional course details'],
             )
 
         self.stdout.write(self.style.SUCCESS('Data populated successfully'))
